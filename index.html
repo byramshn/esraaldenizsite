@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>esraaldeniz | Aynaları konuşturan kız</title>
+<meta content="" name="description"/>
+<meta content="" name="keywords"/>
+<!-- Favicons -->
+<link href="assets/img/favicon.png" rel="icon"/>
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<!-- Vendor CSS Files -->
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/vendor/aos/aos.css" rel="stylesheet"/>
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+<!-- Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet"/>
+<!-- =======================================================
+  * Template Name: Strategy
+  * Template URL: https://bootstrapmade.com/strategy-bootstrap-agency-template/
+  * Updated: Jun 06 2025 with Bootstrap v5.3.6
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+<style>
+/* Art-first gallery rev-2 */
+/* Materials v3 – kart tasarım + hover */
+/* Materials v4 – daha büyük kartlar + hoş hover */
+.ea-mats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 4 yerine 3 kolon */
+  gap: 22px;
+}
+
+@media (max-width: 992px) {
+  .ea-mats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 576px) {
+  .ea-mats { grid-template-columns: 1fr; }
+}
+
+
+.ea-mat {
+  position: relative;
+  background: radial-gradient(circle at top, #1c2233, #0c0f17);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 22px;
+  min-height: 160px; /* daha büyük alan */
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+.ea-mat::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.ea-mat:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.ea-mat:hover::before {
+  opacity: 1;
+}
+
+/* Daha büyük resim */
+.ea-mat img {
+  width: 90px;   /* 64 → 90 */
+  height: 90px;  /* 64 → 90 */
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.ea-mat:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.85);
+}
+
+/* Yazı daha rahat */
+.ea-mat .txt h5 {
+  margin: 0;
+  font-size: 1.15rem; /* 1.02 → 1.15 */
+  color: #ffffff;
+}
+
+.ea-mat .txt p {
+  margin: 5px 0 0 0;
+  color: #b7bfca;
+  font-size: 0.95rem;
+}
+
+/* Buton */
+.ea-mat .cta {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+}
+
+.ea-mat .cta a {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.18s ease;
+}
+
+.ea-mat .cta a:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 10px;
+    color: #fff; /* Açık temaysa #000 yapabilirsin */
+    letter-spacing: 0.5px;
+    font-family: "Poppins", sans-serif;
+}
+.shopier-embed-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.shopier-embed-frame {
+  width: 100%;
+  height: 700px;           /* Gerekirse 600–900 arası oynayabilirsin */
+  border: none;
+  background: #0f1115;
+}
+
+@media (max-width: 768px) {
+  .shopier-embed-frame {
+    height: 600px;
+  }
+}
+
+</style></head>
+<body class="index-page">
+<header class="header d-flex align-items-center fixed-top" id="header">
+<div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<a class="logo d-flex align-items-center me-auto me-xl-0" href="index.html">
+    <img src="assets/img/logo2.png" alt="Esra Aldeniz Logo" class="logo-img">
+    <span class="logo-text">Esra Aldeniz</span>
+</a>
+<nav class="navmenu" id="navmenu">
+<ul><li><a href="#hero">Ana Sayfa</a></li><li><a href="#portfolio">Eserler</a></li><li><a href="#materials">Malzemeler</a></li><li><a href="#about">Hakkımda</a></li><li><a href="#contact">İletişim</a></li></ul>
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+<a class="btn-getstarted" href="#about">Get Started</a>
+</div>
+</header>
+<main class="main">
+<!-- Hero Section -->
+<section class="hero section" id="hero"><div class="container text-center"><h1>Aynaları konuşturan kız</h1><p>Esra Aldeniz'in el yapımı aynaları ve özgün resimleri</p><div class="mt-4 d-flex gap-2 justify-content-center"><a class="btn btn-primary" href="#portfolio">Eserleri Gör</a><a class="btn btn-outline-primary" href="#contact">İletişime Geç</a></div></div></section><!-- /Hero Section -->
+<!-- About Section -->
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+<h2>Hakkımda</h2>
+<div><span></span> <span class="description-title">Hakkımda</span></div>
+</div><!-- End Section Title -->
+<div class="container">
+<div class="row gx-5 align-items-center">
+<div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+<div class="about-image position-relative">
+<img alt="About Image" class="img-fluid rounded-4 shadow-sm" loading="lazy" src="assets/img/about/about-portrait-1.webp"/>
+<div class="experience-badge">
+<span class="years">9+</span>
+<span class="text">Yıl</span>
+</div>
+</div>
+</div>
+<div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
+<div class="about-content">
+    <h2>Ben Esra Aldeniz.</h2>
+
+    <p>
+        Ayna İşleme Sanatı, ışığın dokunduğu her yüzeyde saklı kalmış hikâyeleri ortaya çıkarma arzumun
+        bir yansımasıdır. 2016’da küçük bir merakla başlayan bu yolculuk, zamanla büyüyüp içimde bir
+        tutkuya, bir dile, bir kimliğe dönüştü.
+    </p>
+
+    <p>
+        Sanatımın merkezinde, elmas ucun aynaya bıraktığı küçücük darbeler var…  
+        Her darbe bir nefes, her nokta bir ritim, her desen bir içsel yolculuk.  
+        Işığın bu izlerle buluşması ise sessiz bir şiir gibi—yalnızca görenin kalbinde okunabilen bir
+        ışık şarkısı.
+    </p>
+
+    <p>
+        Ayna, benim için sadece bir yüzey değil; kendini görmenin, kendine sorular sormanın,
+        değişen bakış açılarını fark etmenin büyülü bir kapısı.  
+        Ben aynaları işlerken aslında ışığı, yansımayı ve insanın içindeki görünmez hikâyeleri işliyorum.
+    </p>
+
+    <p>
+        Basit görünen üç dostum var: ayna, çekiç ve elmas uç…  
+        Ama onlar, ellerimde sabırla birleştiğinde birer enstrümana dönüşüyor.  
+        Ve her eser, zamanın ritmine uyup kendi melodisini fısıldıyor.
+    </p>
+
+    <p>
+        İşlediğim her parça, izleyene kendine ait bir dünya açıyor.  
+        Kimi bir anıyı, kimi bir duyguyu, kimi de unutulmuş bir yansımanın ışığını hatırlatıyor.  
+        Benim davetim ise sade:  
+        <strong>Kendi yansımanı bul, ışığınla yüzleş ve bu sanatın seni götürdüğü yerde biraz dur.</strong>
+    </p>
+<div class="row g-4 mt-3">
+<div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+<div class="feature-item">
+<i class="bi bi-check-circle-fill"></i>
+<h5>Özel Ayna Tasarımı</h5>
+</div>
+</div>
+<div class="col-md-6" data-aos="zoom-in" data-aos-delay="450">
+<div class="feature-item">
+<i class="bi bi-lightbulb-fill"></i>
+<h5>Gerçek Sanatın Evinize Yolculuğu</h5>
+</div>
+</div>
+</div>
+<a class="btn btn-primary mt-4" href="https://www.shopier.com/esraaldeniz">Sipariş İçin</a>
+</div>
+</div>
+</div>
+
+</div>
+
+    <section class="portfolio section" id="portfolio">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+
+            <!-- Bölüm Başlığı -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl tracking-tight">Malzemeler ve Sanat Eserleri</h2>
+                <p class="mt-4 text-xl text-gray-500">Kullandığım tüm malzemeleri ve ayna üzerine işlenmiş sanat eserlerini burada bulabilirsiniz.</p>
+            </div>
+
+            <!-- Ürün Kartları Gridi -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8">
+
+                
+
+                <!-- ------------------- SANAT ESERLERİ (17 ÜRÜN) ------------------- -->
+                <h3 class="col-span-full text-3xl font-bold text-gray-700 mt-12 mb-4 border-b pb-2">Ayna Sanat Eserleri</h3>
+
+                <!-- ESER 1: Yelken -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_04e5ebe388e6cee2f0108951e431ccc0.jpg"
+                            alt="Yelken"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Yelken</h5>
+                            <div class="txt text-sm text-gray-700">
+                                <p class="mb-2 font-semibold">Ölçü: 24x24 cm</p>
+                                <ul class="list-disc list-inside space-y-1 pl-4 text-gray-600">
+                                    <li>Noktalama tekniği ile 4 mm ayna üzerine işlenmiştir.</li>
+                                </ul>
+                            </div>
+                            <p class="mt-2 text-lg font-semibold text-red-600">8.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Yelken -->
+                            <a href="https://www.shopier.com/esraaldeniz/40034356" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 2: Yin-Yang -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_081a059f1862729bddbf992107a81d44.jpg"
+                            alt="Yin-Yang Ayna"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Yin-Yang</h5>
+                            <p class="txt text-sm text-gray-600">Zıtların uyumunu temsil eden sanatsal ayna eseri.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">8.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Yin-Yang -->
+                            <a href="https://www.shopier.com/esraaldeniz/40034276" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ESER 3: Ejderha -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_853b9fd4abb2172bbe27b9dcd1bccd67.jpg"
+                            alt="Ejderha Ayna Sanatı"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Ejderha</h5>
+                            <p class="txt text-sm text-gray-600">Gücü ve asaleti temsil eden, noktalama tekniği ile aynaya işlenmiş etkileyici bir çalışma.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">8.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Ejderha -->
+                            <a href="https://www.shopier.com/esraaldeniz/40034203" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 4: "İkra-i Kainat" (Evreni Oku) -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_cecb9423da55ed65885176b0bd61b3ad.jpg"
+                            alt="İkra-i Kainat Ayna"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">"İkra-i Kainat" (Evreni Oku)</h5>
+                            <p class="txt text-sm text-gray-600">Anlamlı kaligrafi çalışması. Evrensel okumayı teşvik eden özel tasarım.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">10.000 TL <span class="text-sm line-through text-gray-500 ml-1">12.000 TL</span></p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: İkra-i Kainat -->
+                            <a href="https://www.shopier.com/esraaldeniz/40034148" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 5: Elif Lam Mim -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_12959991048f96e460e238607d486acd.jpg"
+                            alt="Elif Lam Mim Kaligrafi"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Elif Lam Mim</h5>
+                            <p class="txt text-sm text-gray-600">Kutsal harflerin sanatsal yorumu. Noktalama tekniği ile derinlik kazandırılmıştır.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">15.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Elif Lam Mim -->
+                            <a href="https://www.shopier.com/esraaldeniz/40033952" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 6: Atatürk Portresi -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_34e9c0aa96952f5b762036127d10e8fa.jpg"
+                            alt="Atatürk Portresi"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Atatürk Portresi</h5>
+                            <p class="txt text-sm text-gray-600">Noktalama tekniği ile yüksek detayda işlenmiş, saygı uyandıran özel ayna portre çalışması.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">40.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Atatürk Portresi -->
+                            <a href="https://www.shopier.com/esraaldeniz/40033876" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 7: Kemal Sunal Portresi -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <!-- Gerçekten aranan görsel kullanıldı -->
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_8b1295d19ea5c50a7fe0bfa1db753adf.jpeg"
+                            alt="Kemal Sunal Portresi Ayna"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Kemal Sunal Portresi</h5>
+                            <p class="txt text-sm text-gray-600">Usta sanatçının ayna üzerine işlenmiş, detaylı ve duygusal portre çalışması.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">50.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Kemal Sunal Portresi -->
+                            <a href="https://www.shopier.com/esraaldeniz/40033751" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 8: Hadise Portresi -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_dbcff22463eea14f448a4f662c537b2c.jpg"
+                            alt="Hadise Portresi Ayna"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Hadise Portresi</h5>
+                            <p class="txt text-sm text-gray-600">Ünlü sanatçı Hadise'nin noktalama tekniğiyle hazırlanmış, modern ve çarpıcı ayna portresi.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">40.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Hadise Portresi -->
+                            <a href="https://www.shopier.com/esraaldeniz/40033621" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 9: Besmele ve Fetih -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_98237f952f167d5a43c7ef065b619bb9.jpg"
+                            alt="Besmele ve Fetih Kaligrafi"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Besmele ve Fetih</h5>
+                            <p class="txt text-sm text-gray-600">Özel kaligrafi eseri. Manevi değeri yüksek, dikkat çekici bir ayna çalışması.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">45.000 TL <span class="text-sm line-through text-gray-500 ml-1">50.000 TL</span></p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Besmele ve Fetih -->
+                            <a href="https://www.shopier.com/esraaldeniz/40032024" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ESER 10: Üç Gül -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_5c53dbed98c9be0fecbade448f0ebf30.jpg"
+                            alt="Üç Gül Ayna Sanatı"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Üç Gül</h5>
+                            <p class="txt text-sm text-gray-600">Zarafeti ve aşkı simgeleyen, ayna üzerine işlenmiş üç gül figürü.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">14.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Üç Gül -->
+                            <a href="https://www.shopier.com/esraaldeniz/40031928" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 11: Afrika'nın Işığı -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_b5f92f9357f270237c02af30dc3adbfa.jpg"
+                            alt="Afrika'nın Işığı Portresi"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Afrika'nın Işığı</h5>
+                            <p class="txt text-sm text-gray-600">Derin anlamlar taşıyan bir portre çalışması. Güçlü ve sanatsal bir ifade.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">50.000 TL <span class="text-sm line-through text-gray-500 ml-1">55.000 TL</span></p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Afrika'nın Işığı -->
+                            <a href="https://www.shopier.com/esraaldeniz/40029693" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 12: Çiçek Buketi -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_ccdaa7e1563b1223d93023368d05e819.jpg"
+                            alt="Çiçek Buketi"
+                            class="class="w-full h-full object-cover"">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Çiçek Buketi</h5>
+                            <p class="txt text-sm text-gray-600">Baharın canlılığını yansıtan, elmas uçla işlenmiş zarif ve renkli ayna eseri.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">18.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Çiçek Buketi -->
+                            <a href="https://www.shopier.com/esraaldeniz/40029537" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ESER 13: Yansımalardaki İstanbul -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_ff544b112b5d1802e5e7f6a18c131637.jpg"
+                            alt="Yansımalardaki İstanbul"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Yansımalardaki İstanbul</h5>
+                            <p class="txt text-sm text-gray-600">Tarihin ve modernliğin buluştuğu İstanbul manzarası, ayna yansımalarıyla büyüleyici bir şekilde sunulmuştur.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">25.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Yansımalardaki İstanbul -->
+                            <a href="https://www.shopier.com/esraaldeniz/40029373" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 14: Pembe Gül -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_05c199aa1a409ea24f031999bd538436.jpg"
+                            alt="Pembe Gül Ayna"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Pembe Gül</h5>
+                            <p class="txt text-sm text-gray-600">Tek bir pembe gülün zarafeti, noktalama sanatı ile aynaya aktarılmıştır.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">14.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Pembe Gül -->
+                            <a href="https://www.shopier.com/esraaldeniz/40029236" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 15: Kelebek Gibi Yaşamak -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_80f14642b411357f6b44d12a870b0aad.jpg"
+                            alt="Kelebek Gibi Yaşamak Ayna"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Kelebek Gibi Yaşamak</h5>
+                            <p class="txt text-sm text-gray-600">Özgürlüğü ve hafifliği çağrıştıran, kelebek temalı felsefi bir eser.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">30.000 TL <span class="text-sm line-through text-gray-500 ml-1">33.000 TL</span></p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Kelebek Gibi Yaşamak -->
+                            <a href="https://www.shopier.com/esraaldeniz/40029111" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 16: Örgü Saçlı Kız -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_e340efb6d42fa73f8aa26c1aebd83275.jpg"
+                            alt="Örgü Saçlı Kız Portresi"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Örgü Saçlı Kız</h5>
+                            <p class="txt text-sm text-gray-600">Örgülü saç detaylarının ön planda olduğu, naif ve etkileyici kadın portresi.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">18.000 TL <span class="text-sm line-through text-gray-500 ml-1">20.000 TL</span></p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Örgü Saçlı Kız -->
+                            <a href="https://www.shopier.com/esraaldeniz/40028008" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ESER 17: Ya Sabır -->
+                <div class="ea-mat bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 product-card-container">
+                    <div class="h-60 overflow-hidden">
+                        <img
+                            src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_515e001888ab3f673b113b5c2acc4584."
+                            alt="Ya Sabır Ayna"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between product-content">
+                        <div>
+                            <h5 class="text-2xl font-bold text-gray-800 mb-2">Ya Sabır</h5>
+                            <p class="txt text-sm text-gray-600">Kaligrafik çalışmanın ayna üzerindeki yansıması. Huzur ve sabrı temsil eden, anlamlı bir eser.</p>
+                            <p class="mt-2 text-lg font-semibold text-red-600">8.000 TL</p>
+                        </div>
+                        <div class="cta mt-4">
+                            <!-- DOĞRU LİNK: Ya Sabır -->
+                            <a href="https://www.shopier.com/esraaldeniz/3587321" target="_blank" rel="noopener" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">
+                                Shopier'da Gör
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+            </div>
+            <!-- Ürün Kartları Gridi Sonu -->
+
+        </div>
+    </section>
+<section class="hero section" id="materials">
+  <div class="container">
+
+    <div class="section-header text-center mb-4">
+      <h2>Malzemeler</h2>
+      <p>Kullandığım malzemeleri Shopier üzerinden temin edebilirsiniz.</p>
+    </div>
+
+    <div class="ea-mats">
+
+      <!-- Elmas Uç - 4 mm -->
+      <div class="ea-mat">
+        <img
+          src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_66722e2aa310a276fe454109a7bd48d2.jpg"
+          alt="Elmas Uç - 4 mm">
+        <div class="txt">
+          <h5>Elmas Uç - 4 mm</h5>
+          <p>Sert yüzeylerde hassas, kontrollü işlem için ideal.</p>
+        </div>
+        <div class="cta">
+          <a href="https://www.shopier.com/esraaldeniz/40034788" target="_blank" rel="noopener">
+            Shopier
+          </a>
+        </div>
+      </div>
+
+      <!-- Elmas Uç - 6 mm -->
+      <div class="ea-mat">
+        <img
+          src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_dd26507eb579ba186ce7a661cb21b640.jpg"
+          alt="Elmas Uç - 6 mm">
+        <div class="txt">
+          <h5>Elmas Uç - 6 mm</h5>
+          <p>Daha geniş ve derin dokular için güçlü bir uç.</p>
+        </div>
+        <div class="cta">
+          <a href="https://www.shopier.com/esraaldeniz/40034851" target="_blank" rel="noopener">
+            Shopier
+          </a>
+        </div>
+      </div>
+
+      <!-- Ergonomik Aparat - 4 mm -->
+      <div class="ea-mat">
+        <img
+          src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_4e44fa2b77c2c0a4b84040fbefeacc11.jpg"
+          alt="Ergonomik Aparat - 4 mm">
+        <div class="txt">
+          <h5>Ergonomik Aparat - 4 mm</h5>
+          <p>Uzun süreli kullanımda bile bileği yormayan tutuş.</p>
+        </div>
+        <div class="cta">
+          <a href="https://www.shopier.com/esraaldeniz/40034920" target="_blank" rel="noopener">
+            Shopier
+          </a>
+        </div>
+      </div>
+
+      <!-- Ergonomik Aparat - 6 mm -->
+      <div class="ea-mat">
+        <img
+          src="https://cdn.shopier.app/pictures_large/hayalimdekiayna_5aac8f19bd657d1231d2ac1ff388dc7e.jpg"
+          alt="Ergonomik Aparat - 6 mm">
+        <div class="txt">
+          <h5>Ergonomik Aparat - 6 mm</h5>
+          <p>Elin doğal yapısına uyumlu, dengeli kullanım konforu.</p>
+        </div>
+        <div class="cta">
+          <a href="https://www.shopier.com/esraaldeniz/40034944" target="_blank" rel="noopener">
+            Shopier
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Steps Section -->
+<section class="steps section" id="steps">
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+<h2>Steps</h2>
+<div><span>How we</span> <span class="description-title">Work</span></div>
+</div><!-- End Section Title -->
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+<div class="steps-wrapper">
+<div class="step-item" data-aos="fade-right" data-aos-delay="200">
+<div class="step-content">
+<div class="step-icon">
+<i class="bi bi-lightbulb"></i>
+</div>
+<div class="step-info">
+<span class="step-number">Step 01</span>
+<h3>Initial Consultation</h3>
+<p>Conducting thorough discovery sessions to understand your business requirements and objectives. Our expert team analyzes your needs to create a customized approach.</p>
+</div>
+</div>
+</div><!-- End Step Item -->
+<div class="step-item" data-aos="fade-left" data-aos-delay="300">
+<div class="step-content">
+<div class="step-icon">
+<i class="bi bi-gear"></i>
+</div>
+<div class="step-info">
+<span class="step-number">Step 02</span>
+<h3>Planning &amp; Strategy</h3>
+<p>Developing comprehensive strategies and detailed project plans based on the initial consultation. We create actionable roadmaps with clear milestones and deliverables.</p>
+</div>
+</div>
+</div><!-- End Step Item -->
+<div class="step-item" data-aos="fade-right" data-aos-delay="400">
+<div class="step-content">
+<div class="step-icon">
+<i class="bi bi-bar-chart"></i>
+</div>
+<div class="step-info">
+<span class="step-number">Step 03</span>
+<h3>Development Phase</h3>
+<p>Executing the planned strategies with precision and agility. Our team implements solutions while maintaining constant communication and progress updates.</p>
+</div>
+</div>
+</div><!-- End Step Item -->
+<div class="step-item" data-aos="fade-left" data-aos-delay="500">
+<div class="step-content">
+<div class="step-icon">
+<i class="bi bi-check2-circle"></i>
+</div>
+<div class="step-info">
+<span class="step-number">Step 04</span>
+<h3>Launch &amp; Support</h3>
+<p>Ensuring smooth deployment and providing ongoing support for implemented solutions. We monitor performance and make necessary adjustments for optimal results.</p>
+</div>
+</div>
+</div><!-- End Step Item -->
+</div>
+</div>
+</section><!-- /Steps Section -->
+<!-- Call To Action Section -->
+
+
+<!-- Portfolio Section -->
+<!-- Team Section -->
+
+<section class="contact section" id="contact"><div class="container"><h2>İletişim</h2><p>Sipariş, özel ölçü ve sorularınız için iletişime geçin.</p><ul class="list-unstyled fs-5"><li>Telefon: 0541 879 47 99</li><li>E-posta: hayalimdekiaynam@gmail.com-info@esraaldeniz.com</li><li>Sosyal: <a href="https://www.instagram.com" target="_blank">Instagram</a> · <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li></ul></div></section><!-- /Contact Section -->
+</main>
+<footer class="footer" id="footer">
+<div class="container footer-top">
+<div class="row gy-4">
+</div>
+<div class="container copyright text-center mt-4">
+<p>© <span>2025 esraaldeniz — Tüm hakları saklıdır.</span> <strong class="px-1 sitename">Esra Aldeniz</strong> <span>All Rights Reserved</span></p>
+<div class="credits">
+<!-- All the links in the footer should remain intact. -->
+<!-- You can delete the links only if you've purchased the pro version. -->
+<!-- Licensing information: https://bootstrapmade.com/license/ -->
+<!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://www.linkedin.com/in/sahin-bayram/">Bayram Şahin</a>
+</div>
+</div>
+</footer>
+<!-- Scroll Top -->
+<a class="scroll-top d-flex align-items-center justify-content-center" href="#" id="scroll-top"><i class="bi bi-arrow-up-short"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>
