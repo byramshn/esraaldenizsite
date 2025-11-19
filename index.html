@@ -185,6 +185,123 @@
   }
 }
 
+/* Hero temel yapı */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Arka plan slider alanı */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Tek tek slide'lar */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: heroFade 18s infinite;
+}
+
+/* 3 slide için delay’ler */
+.hero-slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.hero-slide:nth-child(2) {
+  animation-delay: 6s;
+}
+.hero-slide:nth-child(3) {
+  animation-delay: 12s;
+}
+
+/* Fade animasyonu */
+@keyframes heroFade {
+  0%, 20% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  30%, 100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* Koyu overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 50%),
+              linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.9));
+}
+
+/* İçerik */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Buton grubu */
+.hero-buttons .btn {
+  padding-inline: 1.8rem;
+  padding-block: 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+/* Outline butonu açık renge çevir */
+.hero-buttons .btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+.hero-buttons .btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Mobil için ufak iyileştirme */
+@media (max-width: 576px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-subtitle {
+    padding-inline: 1rem;
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+}
+
 </style></head>
 <body class="index-page">
 <header class="header d-flex align-items-center fixed-top" id="header">
@@ -197,84 +314,138 @@
 <ul><li><a href="#hero">Ana Sayfa</a></li><li><a href="#portfolio">Eserler</a></li><li><a href="#materials">Malzemeler</a></li><li><a href="#about">Hakkımda</a></li><li><a href="#contact">İletişim</a></li></ul>
 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 </nav>
-<a class="btn-getstarted" href="#about">Get Started</a>
 </div>
 </header>
 <main class="main">
 <!-- Hero Section -->
-<section class="hero section" id="hero"><div class="container text-center"><h1>Aynaları konuşturan kız</h1><p>Esra Aldeniz'in el yapımı aynaları ve özgün resimleri</p><div class="mt-4 d-flex gap-2 justify-content-center"><a class="btn btn-primary" href="#portfolio">Eserleri Gör</a><a class="btn btn-outline-primary" href="#contact">İletişime Geç</a></div></div></section><!-- /Hero Section -->
+<section id="hero" class="hero section">
+
+  <!-- Arka Plan Slider -->
+  <div class="hero-slider">
+    <div class="hero-slide" style="background-image: url('https://tzv.org.tr/wp-content/uploads/2023/10/En-Iyi-5-Ayna-Sanatcisi-Ve-Eserleri-4.png');"></div>
+    <div class="hero-slide" style="background-image: url('https://tzv.org.tr/wp-content/uploads/2023/10/En-Iyi-5-Ayna-Sanatcisi-Ve-Eserleri-5.png');"></div>
+    <div class="hero-slide" style="background-image: url('https://i.pinimg.com/236x/94/9a/1c/949a1cf7191fe4af3ddc1b434301d04b.jpg');"></div>
+  </div>
+
+  <!-- Koyu Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- İçerik -->
+  <div class="container text-center hero-content" data-aos="fade-up" data-aos-delay="200">
+    <h1 class="hero-title">Aynaları Konuşturan Kız</h1>
+    <p class="hero-subtitle">
+      Esra Aldeniz'in el yapımı ayna işleme eserleri ve özgün ışık resimleri
+    </p>
+
+    <div class="mt-4 d-flex gap-2 justify-content-center hero-buttons">
+      <a class="btn btn-primary" href="#portfolio">Eserleri Gör</a>
+      <a class="btn btn-outline-light" href="#contact">İletişime Geç</a>
+    </div>
+  </div>
+
+</section>
+<!-- /Hero Section -->
+
+
 <!-- About Section -->
 <!-- Section Title -->
-<div class="container section-title" data-aos="fade-up">
-<h2>Hakkımda</h2>
-<div><span></span> <span class="description-title">Hakkımda</span></div>
-</div><!-- End Section Title -->
-<div class="container">
-<div class="row gx-5 align-items-center">
-<div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-<div class="about-image position-relative">
-<img alt="About Image" class="img-fluid rounded-4 shadow-sm" loading="lazy" src="assets/img/about/about-portrait-1.webp"/>
-<div class="experience-badge">
-<span class="years">9+</span>
-<span class="text">Yıl</span>
-</div>
-</div>
-</div>
-<div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
-<div class="about-content">
-    <h2>Ben Esra Aldeniz.</h2>
 
-    <p>
-        Ayna İşleme Sanatı, ışığın dokunduğu her yüzeyde saklı kalmış hikâyeleri ortaya çıkarma arzumun
-        bir yansımasıdır. 2016’da küçük bir merakla başlayan bu yolculuk, zamanla büyüyüp içimde bir
-        tutkuya, bir dile, bir kimliğe dönüştü.
-    </p>
+<section id="about" class="about section">
 
-    <p>
-        Sanatımın merkezinde, elmas ucun aynaya bıraktığı küçücük darbeler var…  
-        Her darbe bir nefes, her nokta bir ritim, her desen bir içsel yolculuk.  
-        Işığın bu izlerle buluşması ise sessiz bir şiir gibi—yalnızca görenin kalbinde okunabilen bir
-        ışık şarkısı.
-    </p>
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Hakkımda</h2>
+    <div><span></span> <span class="description-title">Hakkımda</span></div>
+  </div>
+  <!-- End Section Title -->
 
-    <p>
-        Ayna, benim için sadece bir yüzey değil; kendini görmenin, kendine sorular sormanın,
-        değişen bakış açılarını fark etmenin büyülü bir kapısı.  
-        Ben aynaları işlerken aslında ışığı, yansımayı ve insanın içindeki görünmez hikâyeleri işliyorum.
-    </p>
+  <div class="container">
+    <div class="row gx-5 align-items-center">
 
-    <p>
-        Basit görünen üç dostum var: ayna, çekiç ve elmas uç…  
-        Ama onlar, ellerimde sabırla birleştiğinde birer enstrümana dönüşüyor.  
-        Ve her eser, zamanın ritmine uyup kendi melodisini fısıldıyor.
-    </p>
+      <!-- Left Image -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+        <div class="about-image position-relative">
+          <img src="assets/img/about/about-portrait-1.webp"
+               alt="About Image"
+               class="img-fluid rounded-4 shadow-sm"
+               loading="lazy">
 
-    <p>
-        İşlediğim her parça, izleyene kendine ait bir dünya açıyor.  
-        Kimi bir anıyı, kimi bir duyguyu, kimi de unutulmuş bir yansımanın ışığını hatırlatıyor.  
-        Benim davetim ise sade:  
-        <strong>Kendi yansımanı bul, ışığınla yüzleş ve bu sanatın seni götürdüğü yerde biraz dur.</strong>
-    </p>
-<div class="row g-4 mt-3">
-<div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
-<div class="feature-item">
-<i class="bi bi-check-circle-fill"></i>
-<h5>Özel Ayna Tasarımı</h5>
-</div>
-</div>
-<div class="col-md-6" data-aos="zoom-in" data-aos-delay="450">
-<div class="feature-item">
-<i class="bi bi-lightbulb-fill"></i>
-<h5>Gerçek Sanatın Evinize Yolculuğu</h5>
-</div>
-</div>
-</div>
-<a class="btn btn-primary mt-4" href="https://www.shopier.com/esraaldeniz">Sipariş İçin</a>
-</div>
-</div>
-</div>
+          <div class="experience-badge">
+            <span class="years">9+</span>
+            <span class="text">Yıl</span>
+          </div>
+        </div>
+      </div>
 
-</div>
+      <!-- Right Content -->
+      <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
+        <div class="about-content">
+
+          <h2>Ben Esra Aldeniz.</h2>
+
+          <p>
+            Ayna İşleme Sanatı, ışığın dokunduğu her yüzeyde saklı kalmış hikâyeleri ortaya çıkarma
+            arzumun bir yansımasıdır. 2016’da küçük bir merakla başlayan bu yolculuk, zamanla büyüyüp
+            içimde bir tutkuya, bir dile, bir kimliğe dönüştü.
+          </p>
+
+          <p>
+            Sanatımın merkezinde, elmas ucun aynaya bıraktığı küçücük darbeler var…
+            Her darbe bir nefes, her nokta bir ritim, her desen bir içsel yolculuk.
+            Işığın bu izlerle buluşması ise sessiz bir şiir gibi—yalnızca görenin kalbinde
+            okunabilen bir ışık şarkısı.
+          </p>
+
+          <p>
+            Ayna, benim için sadece bir yüzey değil; kendini görmenin, kendine sorular sormanın,
+            değişen bakış açılarını fark etmenin büyülü bir kapısı.
+            Ben aynaları işlerken aslında ışığı, yansımayı ve insanın içindeki görünmez hikâyeleri
+            işliyorum.
+          </p>
+
+          <p>
+            Basit görünen üç dostum var: ayna, çekiç ve elmas uç…
+            Ama onlar, ellerimde sabırla birleştiğinde birer enstrümana dönüşüyor.
+            Ve her eser, zamanın ritmine uyup kendi melodisini fısıldıyor.
+          </p>
+
+          <p>
+            İşlediğim her parça, izleyene kendine ait bir dünya açıyor.
+            Kimi bir anıyı, kimi bir duyguyu, kimi de unutulmuş bir yansımanın ışığını hatırlatıyor.
+            Benim davetim ise sade:
+            <strong>Kendi yansımanı bul, ışığınla yüzleş ve bu sanatın seni götürdüğü yerde biraz dur.</strong>
+          </p>
+
+          <!-- Features -->
+          <div class="row g-4 mt-3">
+            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
+              <div class="feature-item">
+                <i class="bi bi-check-circle-fill"></i>
+                <h5>Özel Ayna Tasarımı</h5>
+              </div>
+            </div>
+
+            <div class="col-md-6" data-aos="zoom-in" data-aos-delay="450">
+              <div class="feature-item">
+                <i class="bi bi-lightbulb-fill"></i>
+                <h5>Gerçek Sanatın Evinize Yolculuğu</h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <a href="https://www.shopier.com/esraaldeniz" class="btn btn-primary mt-4">
+            Sipariş İçin
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
 
     <section class="portfolio section" id="portfolio">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -778,69 +949,117 @@
 
 <!-- Steps Section -->
 <section class="steps section" id="steps">
-<!-- Section Title -->
-<div class="container section-title" data-aos="fade-up">
-<h2>Steps</h2>
-<div><span>How we</span> <span class="description-title">Work</span></div>
-</div><!-- End Section Title -->
-<div class="container" data-aos="fade-up" data-aos-delay="100">
-<div class="steps-wrapper">
-<div class="step-item" data-aos="fade-right" data-aos-delay="200">
-<div class="step-content">
-<div class="step-icon">
-<i class="bi bi-lightbulb"></i>
-</div>
-<div class="step-info">
-<span class="step-number">Step 01</span>
-<h3>Initial Consultation</h3>
-<p>Conducting thorough discovery sessions to understand your business requirements and objectives. Our expert team analyzes your needs to create a customized approach.</p>
-</div>
-</div>
-</div><!-- End Step Item -->
-<div class="step-item" data-aos="fade-left" data-aos-delay="300">
-<div class="step-content">
-<div class="step-icon">
-<i class="bi bi-gear"></i>
-</div>
-<div class="step-info">
-<span class="step-number">Step 02</span>
-<h3>Planning &amp; Strategy</h3>
-<p>Developing comprehensive strategies and detailed project plans based on the initial consultation. We create actionable roadmaps with clear milestones and deliverables.</p>
-</div>
-</div>
-</div><!-- End Step Item -->
-<div class="step-item" data-aos="fade-right" data-aos-delay="400">
-<div class="step-content">
-<div class="step-icon">
-<i class="bi bi-bar-chart"></i>
-</div>
-<div class="step-info">
-<span class="step-number">Step 03</span>
-<h3>Development Phase</h3>
-<p>Executing the planned strategies with precision and agility. Our team implements solutions while maintaining constant communication and progress updates.</p>
-</div>
-</div>
-</div><!-- End Step Item -->
-<div class="step-item" data-aos="fade-left" data-aos-delay="500">
-<div class="step-content">
-<div class="step-icon">
-<i class="bi bi-check2-circle"></i>
-</div>
-<div class="step-info">
-<span class="step-number">Step 04</span>
-<h3>Launch &amp; Support</h3>
-<p>Ensuring smooth deployment and providing ongoing support for implemented solutions. We monitor performance and make necessary adjustments for optimal results.</p>
-</div>
-</div>
-</div><!-- End Step Item -->
-</div>
-</div>
-</section><!-- /Steps Section -->
-<!-- Call To Action Section -->
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Sanatın Yolculuğu</h2>
+    <div>
+      <span>Nasıl</span> <span class="description-title">Yapıyoruz ?</span>
+    </div>
+  </div>
+  <!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="steps-wrapper">
+
+      <!-- Step 1 -->
+      <div class="step-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+          <div class="step-info">
+            <span class="step-number">1. Adım :</span>
+            <h3>Malzeme Temini</h3>
+            <p>
+              Yapılacak eserin boyut ve tasarımına göre ayna kestirilir.
+              Kullanılacak elmas uçlar temin edilir ve keskinliklerini artırmak için bileyletilir.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Step 1 -->
+
+      <!-- Step 2 -->
+      <div class="step-item" data-aos="fade-left" data-aos-delay="300">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="bi bi-gear"></i>
+          </div>
+          <div class="step-info">
+            <span class="step-number">2. Adım :</span>
+            <h3>Şablon & Hazırlık</h3>
+            <p>
+              Tüm kırtasiye ve yardımcı malzemeler tamamlandıktan sonra, çalışmanın tasarımı
+              ayna üzerine uygun ölçü ve yerleşimle şablon olarak aktarılır.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Step 2 -->
+
+      <!-- Step 3 -->
+      <div class="step-item" data-aos="fade-right" data-aos-delay="400">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="bi bi-bar-chart"></i>
+          </div>
+          <div class="step-info">
+            <span class="step-number">3. Adım :</span>
+            <h3>İşleme Süreci</h3>
+            <p>
+              Tasarlanan desen, elmas uç ile noktalama tekniği kullanılarak işlenir.
+              Bu süreç boyunca sabır ve ustalık ön plandadır.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Step 3 -->
+
+      <!-- Step 4 -->
+      <div class="step-item" data-aos="fade-left" data-aos-delay="500">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="bi bi-bounding-box"></i>
+          </div>
+          <div class="step-info">
+            <span class="step-number">4. Adım :</span>
+            <h3>Çerçeveleme</h3>
+            <p>
+              Eser tamamlandıktan sonra tasarımla uyumlu ve estetik açıdan en uygun çerçeve seçilir.
+              Çerçeveleme işlemi titizlikle uygulanarak eser bütünlüğü sağlanır.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Step 4 -->
+
+      <!-- Step 4 -->
+      <div class="step-info" data-aos="fade-left" data-aos-delay="500">
+        <div class="step-content">
+          <div class="step-icon">
+            <i class="bi bi-check2-circle"></i>
+          </div>
+          <div class="step-info">
+            <span class="step-number">5. Adım :</span>
+            <h3>Paketleme</h3>
+            <p>
+              Paketler siz değerleri sanatserverlere Elden veya Kargo ile teslim edilir.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- End Step 5 -->
+       
+
+    </div>
+  </div>
+
+</section>
 
 
-<!-- Portfolio Section -->
-<!-- Team Section -->
+
+<!-- İletişim Section -->
 
 <section class="contact section" id="contact"><div class="container"><h2>İletişim</h2><p>Sipariş, özel ölçü ve sorularınız için iletişime geçin.</p><ul class="list-unstyled fs-5"><li>Telefon: 0541 879 47 99</li><li>E-posta: hayalimdekiaynam@gmail.com-info@esraaldeniz.com</li><li>Sosyal: <a href="https://www.instagram.com" target="_blank">Instagram</a> · <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></li></ul></div></section><!-- /Contact Section -->
 </main>
